@@ -1,26 +1,29 @@
 import React, { Component } from 'react'
 import '../static/styles/content.scss'
-import Header from './header'
-import { Button, Icon} from 'semantic-ui-react'
+import DetailsModal from './processModals.js'
+import { Button, Icon } from 'semantic-ui-react'
 import Router from 'next/router'
 
 class MovieContent extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {}
-        this.handleClickToDetailspage = this.handleClickToDetailspage.bind(this)
+    state = {
+        showModal: 0
     }
 
-    handleClickToDetailspage() { 
-        Router.push({ pathname: '/detailspage' })
+    getModalDT = value => {
+        this.setState({ showModal: value });
+    }
+    
+    hideModalDT = value => {
+        this.setState({ showModal: 0 });
+        console.log("Close!!!")
     }
 
     render() {
         return (
             <div>
                 {this.props.data.map((data, key) => (
-                    <div className="listBG">
+                    <div key={key} className="listBG">
                         <div className="divImage">
                             <div className="borderImage">
                                 <img className="listImage" src={data.image} alt=""/>
@@ -34,17 +37,25 @@ class MovieContent extends Component {
                             </div>
                             <div className="priceNdate">
                                 <p>Price:&nbsp;&nbsp;&nbsp;&nbsp;{data.price}&nbsp;&nbsp;&nbsp;Baht</p>
-                                {/* <p>Available on:&nbsp;&nbsp;{this.props.obj.date}</p> */}
+                                <p>Available on:&nbsp;&nbsp;{data.date}</p>
                             </div>
                         </div>
                         <div className="wrapBTN">
                             <div className="btn">
-                                <Button className="ui right floated primary button" style={btn} onClick={this.handleClickToDetailspage}>
+                                <Button className="ui right floated primary button" style={btn} 
+                                    onClick={() => this.getModalDT(data.id)}>
                                     <Icon className='cart' style={icon}/>
                                     Buy tickets
                                 </Button>
                             </div>
                         </div>
+                        <DetailsModal
+                            show={this.state.showModal === data.id}
+                            onHide={() => this.hideModalDT(data.id)}
+                            name={data.name} image={data.image}
+                            tagline={data.tagline}
+                            price={data.price}
+                        />
                     </div>
                 ))}
             </div>

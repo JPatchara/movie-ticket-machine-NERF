@@ -2,7 +2,7 @@ import React from 'react'
 import '../static/styles/mainpage.scss'
 import Header from '../components/header.js'
 import MovieContent from '../components/content.js'
-import { Menu, Dropdown } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react'
 import fireST from '../server/firestore.js'
 import axios from 'axios'
 
