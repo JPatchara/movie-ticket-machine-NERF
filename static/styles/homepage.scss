@@ -1,0 +1,55 @@
+[class="homepageBG"] {
+    position: absolute;
+    background-attachment: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgb(39, 36, 36);
+}
+[class="homepageCT"] {
+    position: relative;
+    top: 35vh;
+    transform: translateY(-30vh);
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    top: 12vh;
+    color: rgb(255, 255, 87);
+    text-shadow: 0.2vw 0.2vw rgb(153, 153, 145);
+    font-family: "Courier New", Courier, monospace;
+    font-style: italic;
+    font-size: 6vmin
+}
+[class="homepageLG"] {
+    position: relative;
+    display: flex;
+    top: 16vh;
+    width: 30vw;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    filter : drop-shadow(0 0 6vw rgb(99, 224, 255));
+}
+[class="homepageBTN"] {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.2vmin;
+    background-color: red;
+    color: white;
+    border-radius: 1vmin;
+    justify-content: center;
+    align-items: center;
+    min-width: 10vw;
+    min-height: 5vh;
+    margin-top: 24vh;
+    margin-left: auto;
+    margin-right: auto;
+}
