@@ -1,0 +1,70 @@
+[class="mainpageBG"] {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgb(39, 36, 36);
+}
+[class="mainpageBar"] {
+    width: 100%;
+    background-color: dimgray;
+}
+[class="mainpageBar"] ul {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+[class="mainpageBar"] ul li {
+    list-style: none;
+    position: relative;
+    padding: 10px 15px;
+    transition: 0.5s;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(255, 255, 255, .2);
+}
+[class="mainpageBar"] ul li:last-child {
+    border-right: none;
+}
+[class="movieIcon"] {
+    color: #ffd000;
+    font-size: 4.5vmin;
+    text-shadow: 2px 1px #fff6cc; 
+    margin: auto auto;
+    text-align: center;
+}
+[class="moviesList"] {
+    position: relative;
+    display: flex;
+    clear: both;
+    overflow: scroll;
+    background-color: rgb(255, 255, 255);
+    top: 4vh;
+    margin: auto auto;
+    width: 94vw;
+    height: 82vh;
+    min-height: 15vh;
+}
+[class="listContainer"] {
+    position: relative;
+    margin: auto auto;
+    width: auto;
+    height: auto;
+    min-width: 60vw;
+    min-height: 77vh;
+    border-collapse: collapse;
+}
+@media (max-width: 768px){
+    [class="mainpageBar"] ul {
+        display: block;
+    }
+    [class="mainpageBar"] ul li {
+        display: block;
+    }
+    [class="moviesList"] {
+        margin: auto auto;
+        width: 94vw;
+        height: 70vh;
+        min-height: 15vh;
+    }
+}
